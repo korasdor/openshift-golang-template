@@ -67,5 +67,5 @@
 
 
 [[constraint]]
-  name = "github.com/pressly/chi"
-  version = "2.1.0"
+  name = "github.com/gorilla/mux"
+  version = "1.4.0"
