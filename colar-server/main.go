@@ -12,7 +12,7 @@ func main() {
 
 	http.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("./static"))))
 	
-    bind := fmt.Sprintf("%s:%s", "http://0.0.0.0", "8080")
+    bind := fmt.Sprintf("%s:%s", "0.0.0.0", "8080")
 	fmt.Printf("listening on %s...", bind)
 	err := http.ListenAndServe(bind, nil)
 	if err != nil {
