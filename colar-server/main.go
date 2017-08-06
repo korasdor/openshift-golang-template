@@ -1,6 +1,8 @@
 package main
 
 import (
+	"github.com/gorilla/mux"
+
 	"fmt"
 	"net/http"
 )
@@ -8,11 +10,20 @@ import (
 func main() {
 
 
-	http.HandleFunc("/", hello)
+	//http.HandleFunc("/", hello)
+	//
+	//http.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("./static"))))
+	//
+	//err := http.ListenAndServe(":8080", nil)
+	//if err != nil {
+	//	panic(err)
+	//}
 
-	http.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("./static"))))
-	
-	err := http.ListenAndServe(":8080", nil)
+	r := mux.NewRouter()
+	r.HandleFunc("/", hello)
+	//r.HandleFunc("/static/media/{file}", handler.ServeStaticFiles)
+
+	err := http.ListenAndServe(":8080", r)
 	if err != nil {
 		panic(err)
 	}

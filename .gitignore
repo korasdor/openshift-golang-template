@@ -28,3 +28,6 @@ _testmain.go
 /example-godep/vendor
 /example-glide/vendor
 /example-glide/glide.lock
+
+#project files
+.idea

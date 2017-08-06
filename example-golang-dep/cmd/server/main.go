@@ -9,7 +9,6 @@ import (
 )
 
 func main() {
-	fmt.Println("yes")
 	cli.EchoArgs()
 	if err := server.Start(cli.GetPort()); err != nil {
 		os.Exit(1)
